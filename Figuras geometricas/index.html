@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras geométricas JS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Figuras Geométricas</h1>
+        <section class="containerFigures">
+            <div class="content-figure">
+                <div class="cuadrado"></div>
+                <span class="title-figure">Cuadrado</span>
+                <form class="content-input">
+                    <p>Hallemos el perímetro y área:</p>
+                    <div>
+                        <label for="ladoCuadrado">Lado:</label>
+                        <input id="ladoCuadrado" type="text" placeholder="Ingrese un valor">
+                    </div>
+                    <button id="calculoCuadrado">Cálculo</button>
+                    <div id="resultadoCuadrado"></div>
+                </form>
+            </div>
+            <div class="content-figure">
+                <div class="triangulo"></div>
+                <span class="title-figure">Triangulo</span>
+                <form class="content-input">
+                    <p>Hallemos el perímetro y área:</p>
+                    <div>
+                        <label for="ladoA">Lado A: </label>
+                        <input id="ladoA" type="text" placeholder="Ingrese un valor">
+                    </div>
+                    <div>
+                        <label for="ladoB">Lado B:</label>
+                        <input id="ladoB" type="text" placeholder="Ingrese un valor">
+                    </div>
+                    <div>
+                        <label for="base">Base:</label>
+                        <input id="base" type="text" placeholder="Ingrese un valor">
+                    </div>
+                    <button>Cálculo</button>
+                </form>
+            </div>
+            <div class="content-figure">
+                <div class="circulo"></div>
+                <span class="title-figure">Circulo</span>
+                <form class="content-input">
+                    <p>Hallemos el perímetro y área:</p>
+                    <div>
+                        <label for="">PI:</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="radio">Radio:</label>
+                        <input id="radio" type="text" placeholder="Ingrese un valor">
+                    </div>
+                    <button>Cálculo</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
