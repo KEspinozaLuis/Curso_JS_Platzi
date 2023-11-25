@@ -1,3 +1,10 @@
+
+const resultado = (perimetro, area) => {
+    return `
+        <p class="textR">Perímetro: <span class="valor">${perimetro} cm </span></p>
+        <p class="textR">Área: <span class="valor">${area} cm²</span></p>`
+}
+
 //CUADRADO
 
 const resultadoCuadrado = document.querySelector("#resultadoCuadrado");
@@ -5,42 +12,47 @@ const btnCalculoCuadrado = document.querySelector("#calculoCuadrado");
 
 btnCalculoCuadrado.addEventListener("click", (event) =>{
     event.preventDefault();
-    const ladoCuadrado = document.querySelector("#ladoCuadrado").value;
-    const perimetroCuadrado = ladoCuadrado * 4;
-    const areaCuadrado = ladoCuadrado*ladoCuadrado;
+    const ladoCuadrado = Number(document.querySelector("#ladoCuadrado").value);
+    const perimetro = ladoCuadrado * 4;
+    const area = ladoCuadrado*ladoCuadrado;
     
-    resultadoCuadrado.innerHTML = `<p>Perímetro: ${perimetroCuadrado}</p>
-                                   <p>Área: ${areaCuadrado}</p>`
+    resultadoCuadrado.classList.add("resultado")
+    resultadoCuadrado.innerHTML = resultado(perimetro, area);
 })
 
 
 //TRIANGULO
-console.group("Triangulo");
-const ladoA = 5;
-const ladoB = 5;
-const base = 10;
-const altura = 4;
+const btnCalculoTriangulo = document.querySelector("#calculoTriangulo");
+const resultadoTriangulo = document.querySelector("#resultadoTriangulo");
 
-console.log(`Los lados del triángulo miden ${ladoA}cm, ${ladoB}cm y su base es ${base}cm`);
+btnCalculoTriangulo.addEventListener("click", (event) => {
+    event.preventDefault();
+    const ladoA = Number(document.querySelector("#ladoA").value);
+    const ladoB = Number(document.querySelector("#ladoB").value);
+    const base = Number(document.querySelector("#base").value);
+    const altura = Number(document.querySelector("#altura").value);
 
-const perimetroTriangulo = ladoA + ladoB + base;
-console.log(`El perímetro del triángulo es ${perimetroTriangulo}cm`);
+    const perimetro = ladoA + ladoB + base;
+    const area = (base*altura)/2;
 
-const areaTriangulo = (base*altura)/2;
-console.log(`El área del triángulo es ${areaTriangulo}cm^2`);
+    resultadoTriangulo.classList.add("resultado")
+    resultadoTriangulo.innerHTML = resultado(perimetro, area);
+})
 
-console.groupEnd();
 
 //CIRCULO
-console.group("Círculo");
-const pi = Math.PI;
-const radio = 4;
-const diametro = radio*2;
+const btnCalculoCirculo = document.querySelector("#calculoCirculo");
+const resultadoCirculo = document.querySelector("#resultadoCirculo");
+const pi = Number(document.querySelector("#pi").textContent);
 
-const perimetroCirculo = Math.round(diametro * pi);
-console.log(`El perímetro del círculo es: ${perimetroCirculo}cm`)
+btnCalculoCirculo.addEventListener("click", (event) => {
+    event.preventDefault();
+    const radio = Number(document.querySelector("#radio").value);
+    const perimetro = (radio*2)*pi;
+    const area = pi*radio**2;
 
-const areaCirculo = Math.round(pi * radio**2);
-console.log(`El área del círculo es: ${areaCirculo}cm^2`)
+    resultadoCirculo.classList.add("resultado")
+    resultadoCirculo.innerHTML = resultado(perimetro, area);
+})
 
-console.groupEnd();
+

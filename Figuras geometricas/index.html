@@ -9,54 +9,73 @@
 <body>
     <div class="container">
         <h1 class="title">Figuras Geométricas</h1>
-        <section class="containerFigures">
+        <section class="container-Figures">
             <div class="content-figure">
-                <div class="cuadrado"></div>
-                <span class="title-figure">Cuadrado</span>
-                <form class="content-input">
+                <div class="content-Header">
+                    <div class="cuadrado"></div>
+                    <span class="title-figure">Cuadrado</span>
+                </div>
+                <form class="content-Body">
                     <p>Hallemos el perímetro y área:</p>
-                    <div>
-                        <label for="ladoCuadrado">Lado:</label>
-                        <input id="ladoCuadrado" type="text" placeholder="Ingrese un valor">
+                    <div class="container-inputs">
+                        <div class="content-input">
+                            <label for="ladoCuadrado">Lado:</label>
+                            <input id="ladoCuadrado" type="text" placeholder="Valor">
+                        </div>
                     </div>
-                    <button id="calculoCuadrado">Cálculo</button>
-                    <div id="resultadoCuadrado"></div>
+                    <button id="calculoCuadrado" class="btnCalcular">Calcular</button>
+                    <div id="resultadoCuadrado">
+                    </div>
                 </form>
             </div>
             <div class="content-figure">
-                <div class="triangulo"></div>
-                <span class="title-figure">Triangulo</span>
-                <form class="content-input">
+                <div class="content-Header">
+                    <div class="triangulo"></div>
+                    <span class="title-figure">Triángulo</span>
+                </div>
+                <form class="content-Body">
                     <p>Hallemos el perímetro y área:</p>
-                    <div>
-                        <label for="ladoA">Lado A: </label>
-                        <input id="ladoA" type="text" placeholder="Ingrese un valor">
+                    <div class="container-inputs">
+                        <div class="content-input">
+                            <label for="ladoA">Lado A: </label>
+                            <input id="ladoA" type="text" placeholder="Valor">
+                        </div>
+                        <div class="content-input">
+                            <label for="ladoB">Lado B:</label>
+                            <input id="ladoB" type="text" placeholder="Valor">
+                        </div>
+                        <div class="content-input">
+                            <label for="base">Base:</label>
+                            <input id="base" type="text" placeholder="Valor">
+                        </div>
+                        <div class="content-input">
+                            <label for="altura">Altura:</label>
+                            <input id="altura" type="text" placeholder="Valor">
+                        </div>
                     </div>
-                    <div>
-                        <label for="ladoB">Lado B:</label>
-                        <input id="ladoB" type="text" placeholder="Ingrese un valor">
-                    </div>
-                    <div>
-                        <label for="base">Base:</label>
-                        <input id="base" type="text" placeholder="Ingrese un valor">
-                    </div>
-                    <button>Cálculo</button>
+                    <button id="calculoTriangulo" class="btnCalcular">Calcular</button>
+                    <div id="resultadoTriangulo"></div>
                 </form>
             </div>
             <div class="content-figure">
-                <div class="circulo"></div>
-                <span class="title-figure">Circulo</span>
-                <form class="content-input">
+                <div class="content-Header">
+                    <div class="circulo"></div>
+                    <span class="title-figure">Círculo</span>
+                </div>
+                <form class="content-Body">
                     <p>Hallemos el perímetro y área:</p>
-                    <div>
-                        <label for="">PI:</label>
-                        <input type="text">
+                    <div class="container-inputs">
+                        <div class="content-input">
+                            <label>PI:</label>
+                            <span id="pi">3.1416</span>
+                        </div>
+                        <div class="content-input">
+                            <label for="radio">Radio:</label>
+                            <input id="radio" type="text" placeholder="Valor">
+                        </div>
                     </div>
-                    <div>
-                        <label for="radio">Radio:</label>
-                        <input id="radio" type="text" placeholder="Ingrese un valor">
-                    </div>
-                    <button>Cálculo</button>
+                    <button id="calculoCirculo" class="btnCalcular">Calcular</button>
+                    <div id="resultadoCirculo"></div>
                 </form>
             </div>
         </section>

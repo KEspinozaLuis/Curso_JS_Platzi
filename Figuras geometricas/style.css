@@ -1,8 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+3:wght@400;500;700&display=swap');
+
+:root{
+    --color-cuadrado: #B31312;
+    --color-triangulo: #E48F45;
+    --color-circulo: #9ADE7B;
+    --color-fondo: #F5F7F8;
+    --color-white: #FFFFFF;
+    --color-shadow: #DDDDDD;
+    --color-btn: #3876BF;
+    --color-hover: #0C356A;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+body{
+    background-color: var(--color-fondo);
+}
+
+input{
+    border: 1px solid var(--color-shadow);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    width: 80px;
+}
+
 .container{
     width: 1000px;
     margin: 0 auto;
@@ -10,15 +35,23 @@
 }
 .title{
     font-size: 2.5rem;
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 3rem;
     text-align: center;
 }
-.containerFigures{
-    display: flex;
-    justify-content: space-between;
+.container-Figures{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 .content-figure{
-    text-align: center;
+    background-color: var(--color-white);
+    padding: 2rem ;
+    box-shadow: 5px 5px 8px var(--color-shadow);
+}
+.content-Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .cuadrado, 
 .circulo {
@@ -27,21 +60,19 @@
 }
 
 .cuadrado{
-    background-color: #7C93C3;
+    background-color: var(--color-cuadrado);
 }
-.triangulo{
-    text-align: center;
-}
+
 .triangulo::after{
     content: "";
     display: inline-block;
-    border-bottom: 8rem solid #E48F45;
+    border-bottom: 8rem solid var(--color-triangulo);
     border-left: 4rem solid transparent;
     border-right: 4rem solid transparent;
 }
 
 .circulo{
-    background-color: #9ADE7B;
+    background-color: var(--color-circulo);
     border-radius: 50%;
 }
 .title-figure{
@@ -51,7 +82,48 @@
     margin: 1.5rem 0;
 }
 .content-input{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.container-inputs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+}
+.content-input label{
+    font-size: 0.7rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+.btnCalcular{
+    background-color: var(--color-btn);
+    border: 1px solid var(--color-btn);
+    padding: 0.7rem;
+    font-size: 1rem;
+    color: var(--color-white);
+    border-radius: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    transition: .2s;
+}
+.btnCalcular:hover{
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
+}
+
+.resultado{
+    margin: 1rem 0 0;
+    background-color: var(--color-shadow);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.textR{
+    font-weight: 600;
+    color: #232D3F;
+}
+.textR:first-child{
+    margin-bottom: 0.5rem;
+}
+.valor{
+    font-weight: initial;
+    padding-left: 0.5rem;
 }
