@@ -5,8 +5,11 @@ const resultado = (perimetro, area) => {
         <p class="textR">Área: <span class="valor">${area} cm²</span></p>`
 }
 
-//CUADRADO
+const sinValor = (contenedorResultado) => {
+    return contenedorResultado.innerHTML = `<p>Ingrese un valor correcto</p>`
+}
 
+//CUADRADO
 const resultadoCuadrado = document.querySelector("#resultadoCuadrado");
 const btnCalculoCuadrado = document.querySelector("#calculoCuadrado");
 
@@ -15,8 +18,12 @@ btnCalculoCuadrado.addEventListener("click", (event) =>{
     const ladoCuadrado = Number(document.querySelector("#ladoCuadrado").value);
     const perimetro = ladoCuadrado * 4;
     const area = ladoCuadrado*ladoCuadrado;
-    
     resultadoCuadrado.classList.add("resultado")
+
+    if(!ladoCuadrado || ladoCuadrado < 0){
+        sinValor(resultadoCuadrado);
+        return;
+    }
     resultadoCuadrado.innerHTML = resultado(perimetro, area);
 })
 
@@ -34,8 +41,13 @@ btnCalculoTriangulo.addEventListener("click", (event) => {
 
     const perimetro = ladoA + ladoB + base;
     const area = (base*altura)/2;
+    resultadoTriangulo.classList.add("resultado");
 
-    resultadoTriangulo.classList.add("resultado")
+    if(!ladoA || !ladoB || !base || !altura || ladoA <0 || ladoB <0 || base <0 || altura<0){
+        sinValor(resultadoTriangulo);
+        return;
+    }
+    
     resultadoTriangulo.innerHTML = resultado(perimetro, area);
 })
 
@@ -48,10 +60,14 @@ const pi = Number(document.querySelector("#pi").textContent);
 btnCalculoCirculo.addEventListener("click", (event) => {
     event.preventDefault();
     const radio = Number(document.querySelector("#radio").value);
-    const perimetro = (radio*2)*pi;
-    const area = pi*radio**2;
-
+    const perimetro = ((radio*2)*pi).toFixed(2);
+    const area = (pi*radio**2).toFixed(2);
     resultadoCirculo.classList.add("resultado")
+
+    if(!radio || radio < 0){
+        sinValor(resultadoCirculo);
+        return;
+    }
     resultadoCirculo.innerHTML = resultado(perimetro, area);
 })
 
